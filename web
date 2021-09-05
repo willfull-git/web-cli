@@ -1,0 +1,20 @@
+#!/usr/local/bin/bash
+
+dirCli=$(dirname $0)
+
+# echo "--| script dir: $dirCli"
+
+case $1 in
+  "")
+    echo "--| provide a name for a project"
+    ;;
+  "create")
+    shift 1
+
+    . web_create $*
+    ;;
+  *)
+    echo "--| wrong command"
+    ;;
+
+esac

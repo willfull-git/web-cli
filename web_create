@@ -1,0 +1,24 @@
+#!/usr/local/bin/bash
+
+projectName=$1
+
+echo "--| create web project"
+echo " -| script dir: $0"
+echo " -| project name: $projectName"
+
+shift 1
+
+while getopts "m" o;
+do
+  case $o in
+    m)
+      mkdir $projectName && cd $projectName
+      cp $dirCli/templates/index.html ./index.html
+      cp $dirCli/templates/main.css ./index.html
+      cp $dirCli/templates/index.html ./index.html
+      ;;
+    :)
+      # echo " -| option '$o' has no value"
+      ;;
+  esac
+done
